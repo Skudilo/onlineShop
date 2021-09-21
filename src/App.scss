@@ -1,0 +1,256 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+@import "~antd/dist/antd.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.ant-spin {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  & .ant-spin-dot {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.error {
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/*navbar*/
+
+.header {
+  background-color: #000;
+  align-items: center;
+  margin-bottom: 50px;
+
+  & a {
+    color: #fff;
+  }
+  & .navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  & h2 {
+    font-size: 40px;
+    color: #fff;
+    margin: 0;
+  }
+  & .nav-bag {
+    display: flex;
+    align-items: center;
+  }
+  & .bag-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    margin-left: 5px;
+  }
+}
+
+//home
+
+.home {
+  & .title {
+    text-align: center;
+    font-size: 40px;
+    margin: 30px 0;
+  }
+  & .products {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  & .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 15px;
+    width: 250px;
+    max-width: 100%;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+      2px 2px 5px rgba(94, 104, 121, 0.3);
+  }
+  & .product h3 {
+    font-size: 25px;
+    font-weight: 400;
+  }
+  & .product img {
+    width: 85%;
+    margin: 1rem auto 30px;
+    height: 250px;
+  }
+  & .product .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  & .product .details .price {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  & .product button {
+    width: 100%;
+  }
+}
+
+.cart {
+  padding-bottom: 30px;
+  & h2 {
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
+    & .start-shopping a {
+      display: flex;
+      align-items: center;
+      & span {
+        margin-left: 5px;
+      }
+    }
+  }
+  &-items {
+    border-bottom: 1px solid grey;
+    margin-bottom: 30px;
+  }
+  & .cart-titles,
+  .cart-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+  }
+  &-titles {
+    margin: 0 0.5rem 15px;
+  }
+  &-titles h3:last-child,
+  .cart-item-total {
+    margin-left: auto;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid grey;
+    padding: 20px 0;
+    &-total {
+      font-weight: 700;
+    }
+  }
+  &-product {
+    display: flex;
+    & img {
+      width: 100px;
+      margin-right: 20px;
+    }
+    & h3 {
+      font-weight: bold;
+    }
+    .ant-btn {
+      color: rgba(0, 0, 0, 0.5);
+      &:hover {
+        color: #000000;
+      }
+    }
+  }
+  &-item-quantity {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    border: 1px solid grey;
+    padding: 10px 20px;
+    border-radius: 10px;
+    button {
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+      &:hover {
+        font-weight: 700;
+        transform: scale(1.5);
+      }
+    }
+  }
+  &-summary {
+    display: flex;
+    justify-content: space-between;
+    & > .ant-btn {
+      color: rgba(0, 0, 0, 0.5);
+      border-color: rgba(0, 0, 0, 0.5);
+      :hover {
+        color: #000000;
+        border-color: red;
+      }
+    }
+    & .cart-checkout {
+      width: 260px;
+      &-total {
+        display: flex;
+        justify-content: space-between;
+        & h3 {
+          font-size: 17px;
+        }
+        & span {
+          font-size: 17px;
+          font-weight: 700;
+        }
+      }
+      &-taxes {
+        font-size: 10px;
+      }
+      & .ant-btn {
+        margin-bottom: 15px;
+      }
+      & .continue-shopping a {
+        display: flex;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.5);
+        & span {
+          margin-left: 5px;
+        }
+        &:hover {
+          color: #000000;
+        }
+      }
+    }
+  }
+}
